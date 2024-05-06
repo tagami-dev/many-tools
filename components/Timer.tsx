@@ -1,9 +1,9 @@
 import TimerControlPanel from "./TimerControlPanel";
 import TimerDisplay from "./TimerDisplay";
 
-interface TimerDisplayProps {}
+interface TimerProps {}
 
-const Timer = (props: TimerDisplayProps) => {
+const Timer = (props: TimerProps) => {
   return (
     <div className="w-[400px] h-[350px]">
       <div
