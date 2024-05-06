@@ -3,9 +3,8 @@ import Timer from "@/components/Timer";
 
 export default function Home() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center items-center h-screen">
       <Timer />
-      {/* <Image src={"/timer_ui.jpg"} alt="timer image" width={400} height={300} /> */}
     </div>
   );
 }

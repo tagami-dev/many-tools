@@ -1,37 +1,45 @@
+import { time } from "console";
 import React from "react";
 
 interface TimerControlPanelProps {
-  onStart?: () => void;
-  onStop?: () => void;
-  onReset?: () => void;
+  time: number; // sec
+  isRunning: boolean;
+  setTimer: (newTime: number) => void;
+  resetTimer: () => void;
+  startTimer: () => void;
+  stopTimer: () => void;
 }
+
 const TimerControlPanel = (props: TimerControlPanelProps) => {
-  const { onStart, onStop, onReset } = props;
+  const { time, isRunning, setTimer, resetTimer, startTimer, stopTimer } =
+    props;
 
   return (
     <div className="h-28 w-full rounded-[40px] flex items-center justify-center">
       <div className="flex justify-around gap-8">
         <button
           className="bg-white text-black text-4xl w-16 h-16 rounded-full"
-          onClick={onStart}
+          onClick={() => setTimer(time + 60)}
         >
           分
         </button>
         <button
           className="bg-white text-black text-4xl w-16 h-16 rounded-full"
-          onClick={onStop}
+          onClick={() => setTimer(time + 1)}
         >
           秒
         </button>
         <button
           className="bg-white text-black text-sm w-16 h-16 rounded-full"
-          onClick={onStop}
+          onClick={() => resetTimer()}
         >
           リセット
         </button>
         <button
           className="bg-white text-black text-sm w-16 h-16 rounded-full"
-          onClick={onReset}
+          onClick={() => {
+            isRunning ? stopTimer() : startTimer();
+          }}
         >
           <div className="flex flex-col">
             <div>スタート</div>

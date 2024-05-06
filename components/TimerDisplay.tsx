@@ -1,7 +1,7 @@
 import React from "react";
 
 interface TimerDisplayProps {
-  time: number; // ms
+  time: number; // sec
 }
 
 const TimerDisplay = (props: TimerDisplayProps) => {
